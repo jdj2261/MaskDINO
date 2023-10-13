@@ -328,7 +328,6 @@ class MaskDINO(nn.Module):
 
                     instance_r = retry_if_cuda_oom(self.instance_inference)(mask_cls_result, mask_pred_result, mask_box_result)
                     processed_results[-1]["instances"] = instance_r
-
             return processed_results
 
     def prepare_targets(self, targets, images):
